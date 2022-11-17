@@ -49,11 +49,7 @@ WHERE data.proiezioni
 
 --9 il titolo del film che recita M. Mastroianni oppure S.lorenzo
 --errata 
-/* 
-SELECT film.titolo,attori.nome,recita
-from  film JOIN proiezioni on film.codfilm = proiezioni.codfilm 
-and attori join recita on attori.codattore = recita.codattore
-where  attori.nome = 'Anya Taylor-Joy'*/
+
 SELECT attori.nome,recita
 from  attori join recita on attori.codattore = recita.codattore
 where  attori.nome = 'Anya Taylor-Joy'
