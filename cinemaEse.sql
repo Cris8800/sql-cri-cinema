@@ -59,4 +59,51 @@ from  attori join recita on attori.codattore = recita.codattore
 where  attori.nome = 'Anya Taylor-Joy'
 
 
---10 
+--10 il titolo dei film in cui recitano M.mastroianni oppure S.lorenzo
+
+
+
+--11 Per ogni film in cui recita un attore francese , il titolo del film e il nome dell'attore
+
+
+
+
+--12 Pero ogni film che è stato proiettato a Pisa nel gennaio 2005, il titolo del film e il nome della sala
+
+
+--13 Il numero di sale di Pisa con piu di 60 posti
+
+SELECT MAX (sale.posti),sale.citta
+FROM sale
+GROUP by citta
+
+
+--14 il numero di posti nelle sale di Pisa
+
+
+
+
+--15 Per ogni città, il numero di sale 
+
+
+
+
+--16  Per ogni città, il numero di sale con più di 60 posti 
+
+
+
+
+--17Per ogni regista regista ,il numero di film diretti dopo 1990
+
+
+
+
+
+--18 per ogni regista, l'incasso totale di tutte le proiezioni dei suoi film
+
+
+
+
+
+--19 Per ogni film di S.spielbierg, il titolo del film, il numero totale di proiezioni a Pisa e l'incasso totale
+
