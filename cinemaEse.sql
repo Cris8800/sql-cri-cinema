@@ -1,7 +1,7 @@
 --1 il nome di tutte le sale di pisa
-SELECT sale.nome
+SELECT nome
 FROM sale
-WHERE sale.citta = 'Pisa'
+WHERE citta = 'Pisa'
 
 
 --2 i film di Fellini prodotti dopo il 1960
@@ -33,7 +33,7 @@ where  regista = 'Makoto Shinkai'
 --6 il titolo e il genere dei film proiettati il giorno di natale 2004 
 
 --errata mancanza data 
-SELECT film.titolo,genere,dataproiezione
+SELECT film.titolo,film.genere
 from film, proiezioni
 WHERE data.proiezioni 
 
@@ -55,12 +55,19 @@ from  attori join recita on attori.codattore = recita.codattore
 where  attori.nome = 'Anya Taylor-Joy'
 
 
+
 --10 il titolo dei film in cui recitano M.mastroianni oppure S.lorenzo
 
 
 
 --11 Per ogni film in cui recita un attore francese , il titolo del film e il nome dell'attore
+-- ho messo giapponese
 
+SELECT film.titolo,attori.nome
+from  film,attori,recita
+where film.codfilm=recita.codfilm 
+and recita.codattore=attori.codattore
+AND attori.nazionalita='Giapponese'
 
 
 
@@ -74,14 +81,20 @@ FROM sale
 GROUP by citta
 
 
---14 il numero di posti nelle sale di Pisa
+--14 il numero totale di posti nelle sale di Pisa
+--milano
+select sum(posti)
+from sale 
+where citta='Milano'
 
 
 
 
 --15 Per ogni città, il numero di sale 
 
-
+select citta,count(*)
+from sale 
+group by citta
 
 
 --16  Per ogni città, il numero di sale con più di 60 posti 
@@ -89,8 +102,11 @@ GROUP by citta
 
 
 
---17Per ogni regista regista ,il numero di film diretti dopo 1990
-
+--17 Per ogni regista regista ,il numero di film diretti dopo 1990
+select regista,count(*)
+from film 
+where annoproduzione>1990
+group by regista
 
 
 
